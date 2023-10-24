@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateMarkdown = require("./generateMarkdown.js");
+const generateMarkdown = require("./utils/generateMarkdown");
 // TODO: Create an array of questions for user input
 const questions = [{
     type: "input",
@@ -109,12 +109,12 @@ const questions = [{
 {
     type: 'input',
     name: 'tests',
-    message: 'Describe the tests written for your application and their usage',
+    message: 'Describe the tests writen for your application and their usage',
     validate: testsInput => {
         if (testsInput) {
             return true;
         } else {
-            console.log('Test writtenn for application');
+            console.log('Test writen for application');
             return false;
         }
     }
