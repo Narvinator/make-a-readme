@@ -8,7 +8,7 @@ const questions = [{
     name: "name",
     message: "Enter your first and last name",
     validate: nameInput => {
-        if (nameImput) {
+        if (nameInput) {
             return true;
         } else {
             console.log("Enter your last and first name");
@@ -59,7 +59,7 @@ const questions = [{
     type: "input",
     name: "description",
     message: "Enter your description for your project",
-    validate: descripionInput => {
+    validate: descriptionInput => {
         if (descriptionInput) {
             return true;
         } else {
