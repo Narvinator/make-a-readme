@@ -67,7 +67,7 @@ const questions = [{
             return false;
         }
     }
-}, 
+},
 {
     type: 'input',
     name: 'installation',
@@ -80,7 +80,7 @@ const questions = [{
             return false;
         }
     }
-}, 
+},
 {
     type: 'input',
     name: 'usage',
@@ -93,6 +93,50 @@ const questions = [{
             return false;
         }
     }
+}, {
+    type: 'input',
+    name: 'contributing',
+    message: 'How can others contribute to this project?',
+    validate: contributionInput => {
+        if (contributionInput) {
+            return true;
+        } else {
+            console.log('Include instructions for project');
+            return false;
+        }
+    }
+},
+{
+    type: 'input',
+    name: 'tests',
+    message: 'Describe the tests written for your application and their usage',
+    validate: testsInput => {
+        if (testsInput) {
+            return true;
+        } else {
+            console.log('Test writtenn for application');
+            return false;
+        }
+    }
+},
+{
+    type: 'confirm',
+    name: 'confirmLicenses',
+    message: 'Would you like to include a license?',
+    default: false
+},
+{
+    type: 'list',
+    name: 'licenses',
+    message: 'What license would you like to include?',
+    choices: ['MIT', 'GPL', 'CC--0'],
+    when: ({ confirmLicenses }) => {
+        if (confirmLicenses) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 },
 ];
 
@@ -101,15 +145,15 @@ function writeToFile(data) {
     return new Promise((resolve, reject) => {
         fs.writeFile(".folder/README.md", data, err => {
             if (err) {
-                reject (err);
+                reject(err);
                 return;
             }
 
-        resolve({
-            ok: true,
-            message: console.log('Working Properly')
-        });
-    })
+            resolve({
+                ok: true,
+                message: console.log('Working Properly')
+            });
+        })
     })
 }
 
@@ -120,9 +164,12 @@ const init = () => {
 
 // Function call to initialize app
 init()
-.then(userInput => {
-    return generateMarkdown(userInput);
-})
-.then(readmeInfo => {
-    return writeToFile(readmeInfo);
-});
+    .then(userInput => {
+        return generateMarkdown(userInput);
+    })
+    .then(readmeInfo => {
+        return writeToFile(readmeInfo);
+    })
+    .catch(err => {
+        console.log(err);
+    });
