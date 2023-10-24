@@ -6,15 +6,15 @@ The following application involves the use of Node.JS. This will assist you in t
 
 ## Demo 
 
-C:\Users\Narvin's NEET PC\Documents\UCF\homework\module-9-challenge\make-a-readme\Untitled_ Oct 24, 2023 4_26 AM.webm
+[Untitled_ Oct 24, 2023 4_26 AM.webm](https://github.com/Narvinator/make-a-readme/assets/144052327/739b8663-bda7-4a9f-b03d-b45c1e36bb13)
+
 
 ## Table of Contents 
 
-Features
-Installation
-Usage
-Configuration
-License
+1. [Instlattion](#installation)
+2. [Usage](#usage)
+3. [Credits](#credits)
+4. [License](#license)
 
 ## Features
 
