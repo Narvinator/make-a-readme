@@ -43,6 +43,19 @@ const questions = [{
     }
 },
 {
+    type: 'input',
+    name: 'title',
+    message: 'Enter a title for you project',
+    validate: titleInput => {
+        if (titleInput) {
+            return true;
+        } else {
+            console.log('Enter a unique title for your project');
+            return false;
+        }
+    }
+},
+{
     type: "input",
     name: "description",
     message: "Enter your description for your project",
@@ -54,7 +67,33 @@ const questions = [{
             return false;
         }
     }
-}  
+}, 
+{
+    type: 'input',
+    name: 'installation',
+    message: 'How is this application installed?',
+    validate: installationInput => {
+        if (installationInput) {
+            return true;
+        } else {
+            console.log('Include instructions for the applications are installed.');
+            return false;
+        }
+    }
+}, 
+{
+    type: 'input',
+    name: 'usage',
+    message: 'Give instructions and examples for use.',
+    validate: usageInput => {
+        if (usageInput) {
+            return true;
+        } else {
+            console.log('Please provide Usage Instructions.');
+            return false;
+        }
+    }
+},
 ];
 
 // TODO: Create a function to write README file
